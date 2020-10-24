@@ -17,8 +17,8 @@ export CXXFLAGS="${CXXFLAGS} -pthread"
 CMAKE_FLAGS=""
 BUILD_GUI="TRUE"
 
-if [ ${dp_variant} == "gpu" ]; then
-    export DEEPMD_CUDA_LINK="-DMLCUDA"
+if [ ${cuda_compiler_version} != "None" ]; then
+    export DEEPMD_CUDA_LINK="-DMLCUDA -I/usr/local/cuda/include"
 else
 	export DEEPMD_CUDA_LINK=""
 fi

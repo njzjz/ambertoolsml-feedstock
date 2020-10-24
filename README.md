@@ -34,87 +34,45 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_cuda_compiler_version10.1dp_variantcpupython3.6</td>
+              <td>linux_64_cuda_compiler_version10.1python3.6</td>
               <td>
                 <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1dp_variantcpupython3.6" alt="variant">
+                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1python3.6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version10.1dp_variantcpupython3.7</td>
+              <td>linux_64_cuda_compiler_version10.1python3.7</td>
               <td>
                 <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1dp_variantcpupython3.7" alt="variant">
+                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1python3.7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version10.1dp_variantcpupython3.8</td>
+              <td>linux_64_cuda_compiler_version10.1python3.8</td>
               <td>
                 <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1dp_variantcpupython3.8" alt="variant">
+                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1python3.8" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version10.1dp_variantgpupython3.6</td>
+              <td>linux_64_cuda_compiler_versionNonepython3.6</td>
               <td>
                 <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1dp_variantgpupython3.6" alt="variant">
+                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonepython3.6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version10.1dp_variantgpupython3.7</td>
+              <td>linux_64_cuda_compiler_versionNonepython3.7</td>
               <td>
                 <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1dp_variantgpupython3.7" alt="variant">
+                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonepython3.7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version10.1dp_variantgpupython3.8</td>
+              <td>linux_64_cuda_compiler_versionNonepython3.8</td>
               <td>
                 <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1dp_variantgpupython3.8" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonedp_variantcpupython3.6</td>
-              <td>
-                <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonedp_variantcpupython3.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonedp_variantcpupython3.7</td>
-              <td>
-                <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonedp_variantcpupython3.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonedp_variantcpupython3.8</td>
-              <td>
-                <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonedp_variantcpupython3.8" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonedp_variantgpupython3.6</td>
-              <td>
-                <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonedp_variantgpupython3.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonedp_variantgpupython3.7</td>
-              <td>
-                <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonedp_variantgpupython3.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonedp_variantgpupython3.8</td>
-              <td>
-                <a href="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonedp_variantgpupython3.8" alt="variant">
+                  <img src="https://dev.azure.com/deepmd-kit-recipes/feedstock-builds/_apis/build/status/ambertoolsml-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonepython3.8" alt="variant">
                 </a>
               </td>
             </tr>

@@ -18,7 +18,7 @@ source:
 
 build:
   number: 0
-  string: "{{ PKG_BUILDNUM }}_cuda{{ cuda_compiler_version }}_{{ dp_variant }}"
+  string: "py{{ py }}_{{ PKG_BUILDNUM }}_cuda{{ cuda_compiler_version }}_{{ dp_variant }}"
   skip: True  # [win or py2k]
   skip: True  # [not linux]
   skip: True  # [cuda_compiler_version == '9.2']

@@ -1,8 +1,5 @@
 # use run or skip
 unit_tests: skip
-dp_variant:
-  - cpu
-  - gpu
 channel_sources:
   - deepmodeling,defaults
 channel_targets:
