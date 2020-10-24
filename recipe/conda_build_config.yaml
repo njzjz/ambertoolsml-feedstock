@@ -3,7 +3,7 @@ unit_tests: skip
 channel_sources:
   - deepmodeling,defaults
 channel_targets:
-  - deepmodeling main
+  - ambertoolsml main
 python:
   - 3.6
   - 3.7
