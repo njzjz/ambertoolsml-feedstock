@@ -1,6 +1,12 @@
 {% set name = "AmberToolsML" %}
 {% set version = "20.10" %}
 
+{% if cuda_compiler_version == "None" %}
+{% set dp_variant = "cpu" %}
+{% else %}
+{% set dp_variant = "gpu" %}
+{% endif %}
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -12,8 +18,11 @@ source:
 
 build:
   number: 0
+  string: "{{ PKG_BUILDNUM }}_cuda{{ cuda_compiler_version }}_{{ dp_variant }}"
   skip: True  # [win or py2k]
   skip: True  # [not linux]
+  skip: True  # [cuda_compiler_version == '9.2']
+  skip: True  # [cuda_compiler_version == '10.0']
 
 requirements:
   build:
@@ -52,6 +61,7 @@ requirements:
     - mkl
     - libdeepmd {{ dp_version }} *{{ dp_variant }}
     - cudatoolkit {{ cuda_compiler_version }}*  # [cuda_compiler_version != 'None']
+    - mpich
   run:
     - python
     - perl
@@ -67,6 +77,7 @@ requirements:
     - mkl
     - {{ pin_compatible('libdeepmd', exact=True) }}
     - {{ pin_compatible('cudatoolkit', max_pin='x.x') }}  # [cuda_compiler_version != 'None']
+    - mpich
   run_constrained:
     - ambermini ==9999999999
 

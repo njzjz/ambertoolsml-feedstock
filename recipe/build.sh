@@ -38,6 +38,19 @@ cmake ${SRC_DIR} ${CMAKE_FLAGS} \
 
 make && make install
 
+cmake ${SRC_DIR} ${CMAKE_FLAGS} \
+    -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+    -DCOMPILER=MANUAL \
+    -DPYTHON_EXECUTABLE=${PYTHON} \
+    -DBUILD_GUI=${BUILD_GUI} \
+    -DCHECK_UPDATES=FALSE \
+    -DTRUST_SYSTEM_LIBS=TRUE \
+	-DCMAKE_CXX_FLAGS="${flibs_ml}" \
+    -DMPI=TRUE
+
+make && make install
+
+
 # Export AMBERHOME automatically
 mkdir -p ${PREFIX}/etc/conda/{activate,deactivate}.d
 cp ${RECIPE_DIR}/activate.sh ${PREFIX}/etc/conda/activate.d/ambertools.sh

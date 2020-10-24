@@ -1,1 +1,6 @@
-{}
+github:
+  user_or_org: deepmd-kit-recipes
+channels:
+  targets:
+    -
+      - ambertoolsml
