@@ -15,15 +15,13 @@ channel_targets:
 cuda_compiler:
 - nvcc
 cuda_compiler_version:
-- '10.1'
+- None
 cxx_compiler:
 - gxx
 cxx_compiler_version:
 - '7'
 docker_image:
-- condaforge/linux-anvil-cuda:10.1
-dp_variant:
-- cpu
+- condaforge/linux-anvil-comp7
 dp_version:
 - 1.2.2
 fftw:
@@ -61,7 +59,7 @@ pin_run_as_build:
   zlib:
     max_pin: x.x
 python:
-- '3.6'
+- '3.8'
 readline:
 - '8.0'
 target_platform:
