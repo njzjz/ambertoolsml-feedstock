@@ -1,0 +1,23 @@
+# use run or skip
+unit_tests: skip
+dp_variant:
+  - cpu
+  - gpu
+channel_sources:
+  - deepmodeling,defaults
+channel_targets:
+  - deepmodeling main
+python:
+  - 3.6
+  - 3.7
+  - 3.8
+numpy:
+  - 1.16
+  - 1.16
+  - 1.16
+libnetcdf:
+- 4.7.3
+dp_version:
+- 1.2.2
+boost_cpp:
+- 1.73.0

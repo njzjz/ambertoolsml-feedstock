@@ -1,0 +1,111 @@
+{% set name = "AmberToolsML" %}
+{% set version = "20.10" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://public.njzjz.win/AmberTools20ml.22oct20.tar.bz2
+  patches:
+    - patches/cmake.patch
+
+build:
+  number: 0
+  skip: True  # [win or py2k]
+  skip: True  # [not linux]
+
+requirements:
+  build:
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - flex
+    - bison
+    - make
+    - cmake
+    - perl
+    - mkl
+    - {{ cdt('libxt-devel') }}  # [unix]
+    - {{ cdt('libxext-devel') }}   # [unix]
+    - {{ cdt('libx11-devel') }}   # [unix]
+    - {{ cdt('libice-devel') }}   # [unix]
+    - {{ cdt('libsm-devel') }}   # [unix]
+    - {{ cdt('xorg-x11-proto-devel') }}  # [unix]
+    - {{ cdt('libuuid-devel') }}  # [unix]
+    - {{ cdt('libxcb') }}  # [unix]
+  host:
+    - python
+    - setuptools
+    - cython
+    - numpy
+    - scipy
+    - matplotlib-base
+    - bzip2
+    - zlib
+    - boost-cpp
+    - libnetcdf
+    - pthread-stubs
+    - fftw
+    - libopenblas
+    - readline
+    - mkl
+    - libdeepmd {{ dp_version }} *{{ dp_variant }}
+    - cudatoolkit {{ cuda_compiler_version }}*  # [cuda_compiler_version != 'None']
+  run:
+    - python
+    - perl
+    - cython
+    - numpy
+    - scipy
+    - matplotlib-base
+    - boost-cpp
+    - libnetcdf
+    - fftw
+    - libopenblas
+    - readline
+    - mkl
+    - {{ pin_compatible('libdeepmd', exact=True) }}
+    - {{ pin_compatible('cudatoolkit', max_pin='x.x') }}  # [cuda_compiler_version != 'None']
+  run_constrained:
+    - ambermini ==9999999999
+
+test:
+  requires:
+{% if unit_tests == "run" %}
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    #- util-linux  # [linux64]
+{% endif %}
+    #- tcsh
+  source_files:
+{% if unit_tests == "run" %}
+    - "*"
+{% else %}
+    # we need to copy at least one file, otherwise we can't use SRC_DIR in run_test.sh
+    - README
+{% endif %}
+  # commands: check run_test.sh for CLI tests
+  imports:
+    - parmed
+    - pdb4amber
+    - pymsmt
+    - pytraj
+    - sander
+
+about:
+  home: http://ambermd.org/AmberTools.php
+  license: Multiple
+  license_file: AmberTools/LICENSE
+  summary: 'AmberTools is a set of programs for biomolecular simulation and analysis'
+  description: |
+    AmberTools is a set of programs for biomolecular simulation and analysis.
+    They are designed to work well with each other, and with the "regular" Amber
+    suite of programs. You can perform many simulation tasks with AmberTools,
+    and you can do more extensive simulations with the combination of AmberTools
+    and Amber itself.
+
+extra:
+  recipe-maintainers:
+    - njzjz

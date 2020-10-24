@@ -1,0 +1,12 @@
+diff --git a/AmberTools/src/sander/CMakeLists.txt b/AmberTools/src/sander/CMakeLists.txt
+index 38538da5d0..08f16b1439 100644
+--- a/AmberTools/src/sander/CMakeLists.txt
++++ b/AmberTools/src/sander/CMakeLists.txt
+@@ -30,6 +30,7 @@ set(SANDER_COMMON_SOURCE resamplekin.F90 boost-gamma-distribution.cpp les.F90 st
+     nfe-cv-PAIR_DIHEDRAL.F90 nfe-cv-PATTERN_DIHEDRAL.F90 nfe-cv-DF_COM_DISTANCE.F90 
+     nfe-smd-hooks.F90 nfe-umbrella.F90 nfe-utils.F90 nfe-value.F90 mt19937.F90
+     pol_gauss.F90 quench.F90 external.F90 relaxmd.F90 music_module.F90 constante.F90
++	mlmod.F90 ml.cpp f90stream.cpp f90stream_mod.F90 f90stream.hpp
+     rattle.F90 md_scheme.F90)
+ 
+ set(EMIL_SOURCE emil.F90 mdin_emil_dat.F90)
