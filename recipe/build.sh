@@ -18,11 +18,9 @@ CMAKE_FLAGS=""
 BUILD_GUI="TRUE"
 
 if [ ${cuda_compiler_version} != "None" ]; then
-    export DEEPMD_CUDA_LINK="-DMLCUDA"
-	export CMAKE_CUDA_FLAGS="-DUSE_CUDA_TOOLKIT=true -DCUDA_HOST_COMPILER=${CC}"
+    export DEEPMD_CUDA_LINK="-DMLCUDA -I/usr/local/cuda/include"
 else
 	export DEEPMD_CUDA_LINK=""
-	export CMAKE_CUDA_FLAGS="-DUSE_CUDA_TOOLKIT=0"
 fi
 export flibs_ml="${DEEPMD_CUDA_LINK} -DHIGH_PREC -L ${PREFIX}/lib -Wl,--no-as-needed -lrt -ldeepmd_op -ldeepmd -ltensorflow_cc -ltensorflow_framework -lstdc++ -Wl,-rpath=${PREFIX}/lib"
 
@@ -36,8 +34,7 @@ cmake ${SRC_DIR} ${CMAKE_FLAGS} \
     -DBUILD_GUI=${BUILD_GUI} \
     -DCHECK_UPDATES=FALSE \
     -DTRUST_SYSTEM_LIBS=TRUE \
-	-DCMAKE_CXX_FLAGS="${flibs_ml}" \
-	${CMAKE_CUDA_FLAGS}
+	-DCMAKE_CXX_FLAGS="${flibs_ml}"
 
 make && make install
 
@@ -49,8 +46,7 @@ cmake ${SRC_DIR} ${CMAKE_FLAGS} \
     -DCHECK_UPDATES=FALSE \
     -DTRUST_SYSTEM_LIBS=TRUE \
 	-DCMAKE_CXX_FLAGS="${flibs_ml}" \
-    -DMPI=TRUE \
-	${CMAKE_CUDA_FLAGS}
+    -DMPI=TRUE
 
 make && make install
 
