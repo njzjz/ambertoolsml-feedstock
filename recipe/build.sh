@@ -19,10 +19,10 @@ BUILD_GUI="TRUE"
 
 if [ ${cuda_compiler_version} != "None" ]; then
     export DEEPMD_CUDA_LINK="-DMLCUDA"
-	export CMAKE_CUDA_FLAGS="-DUSE_CUDA_TOOLKIT=0"
+	export CMAKE_CUDA_FLAGS="-DUSE_CUDA_TOOLKIT=true -DCUDA_HOST_COMPILER=${CC} -DCUDA_NVCC_FLAGS=\"-gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 gencode arch=compute_37,code=sm_37 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_52,code=sm_52 -gencode arch=compute_53,code=sm_53 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_61,code=sm_61 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_75,code=sm_75\""
 else
 	export DEEPMD_CUDA_LINK=""
-	export CMAKE_CUDA_FLAGS="-DUSE_CUDA_TOOLKIT=true -DCUDA_HOST_COMPILER=${CC} -DCUDA_TOOLKIT_ROOT_DIR=${CUDA_HOME} -DCUDA_NVCC_FLAGS=\"-gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 gencode arch=compute_37,code=sm_37 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_52,code=sm_52 -gencode arch=compute_53,code=sm_53 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_61,code=sm_61 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_75,code=sm_75\""
+	export CMAKE_CUDA_FLAGS="-DUSE_CUDA_TOOLKIT=0"
 fi
 export flibs_ml="${DEEPMD_CUDA_LINK} -DHIGH_PREC -L ${PREFIX}/lib -Wl,--no-as-needed -lrt -ldeepmd_op -ldeepmd -ltensorflow_cc -ltensorflow_framework -lstdc++ -Wl,-rpath=${PREFIX}/lib"
 
