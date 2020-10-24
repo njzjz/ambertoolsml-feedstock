@@ -11,7 +11,7 @@ cdt_name:
 channel_sources:
 - deepmodeling,defaults
 channel_targets:
-- deepmodeling main
+- ambertoolsml main
 cuda_compiler:
 - nvcc
 cuda_compiler_version:
