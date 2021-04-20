@@ -1,5 +1,5 @@
 {% set name = "AmberToolsML" %}
-{% set version = "20.10" %}
+{% set version = "2021.04.20" %}
 
 {% if cuda_compiler_version == "None" %}
 {% set dp_variant = "cpu" %}
@@ -12,9 +12,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://public.njzjz.win/AmberTools20ml.22oct20.tar.bz2
-  patches:
-    - patches/cmake.patch
+  url: https://drive.njzjz.win/AmberTools20ml.20apr21.tar.bz2
 
 build:
   number: 0
