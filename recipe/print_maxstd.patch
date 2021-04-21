@@ -1,0 +1,15 @@
+diff --git a/AmberTools/src/sander/mlmod.F90 b/AmberTools/src/sander/mlmod.F90
+index 47822a8266..758462f7cf 100644
+--- a/AmberTools/src/sander/mlmod.F90
++++ b/AmberTools/src/sander/mlmod.F90
+@@ -480,7 +480,9 @@ contains
+        ml_nml%keepcrd = .true.
+        ml_nml%iskip = ml_nml%alskip+1
+        if ( irank == 0 ) then
+-!       write(6,'(a)')"Outputting crds..."
++          write(6,'(2A,F11.5,A)')"Active learning frame", &
++               & " written with max. frc. std.: ", &
++               & maxstd, " kcal/mol/A"
+        end if
+     else
+        ml_nml%keepcrd = .false.
