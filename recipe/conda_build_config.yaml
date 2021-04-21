@@ -4,14 +4,6 @@ channel_sources:
   - deepmodeling,defaults
 channel_targets:
   - ambertoolsml main
-python:
-  - 3.6
-  - 3.7
-  - 3.8
-numpy:
-  - 1.16
-  - 1.16
-  - 1.16
 libnetcdf:
 - 4.7.3
 dp_version:
@@ -23,3 +15,44 @@ cuda_compiler_version:
   - 9.2
   - 10.0
   - 10.1
+cudnn:
+- undefined
+- 7
+- 7
+- 7
+c_compiler_version:
+- 7
+cxx_compiler_version:
+- 7
+fortran_compiler_version:
+- 7
+cdt_name:
+- cos6
+- cos6
+- cos6
+- cos6
+docker_image:
+- quay.io/condaforge/linux-anvil-comp7
+- quay.io/condaforge/linux-anvil-cuda:9.2 
+- quay.io/condaforge/linux-anvil-cuda:10.0 
+- quay.io/condaforge/linux-anvil-cuda:10.1 
+zip_keys:
+  - - cudnn
+    - cuda_compiler_version
+    - docker_image
+    - cdt_name
+  - - python
+    - python_impl
+    - numpy
+python:
+- 3.7.*
+- 3.8.*
+- 3.9.*
+python_impl:
+- cpython
+- cpython
+- cpython
+numpy:
+- 1.16
+- 1.16
+- 1.16

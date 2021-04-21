@@ -12,7 +12,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://drive.njzjz.win/AmberTools20ml.20apr21.tar.bz2
+  url: https://public.njzjz.win/AmberTools20ml.20apr21.tar.bz2
 
 build:
   number: 0
