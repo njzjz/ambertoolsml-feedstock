@@ -15,9 +15,10 @@ source:
   url: https://public.njzjz.win/AmberTools20ml.20apr21.tar.bz2
   patches:
     - print_maxstd.patch
+    - dp2.patch
 
 build:
-  number: 1
+  number: 2
   string: "py{{ py }}_{{ PKG_BUILDNUM }}_cuda{{ cuda_compiler_version }}_{{ dp_variant }}"
   skip: True  # [win or py2k]
   skip: True  # [not linux]

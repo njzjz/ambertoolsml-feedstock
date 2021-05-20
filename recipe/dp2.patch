@@ -1,0 +1,66 @@
+diff --git a/AmberTools/src/sander/ml.cpp b/AmberTools/src/sander/ml.cpp
+index 75ab58028b..cef361b225 100644
+--- a/AmberTools/src/sander/ml.cpp
++++ b/AmberTools/src/sander/ml.cpp
+@@ -8,7 +8,7 @@
+ #include <tr1/memory>
+ #include <vector>
+ #include <string>
+-#include <deepmd/NNPInter.h>
++#include <deepmd/DeepPot.h>
+ #include "f90stream.hpp"
+ 
+ #ifdef WITH_MPI
+@@ -126,7 +126,7 @@ public:
+   int * ilist;
+   int * numneigh;
+   int * * firstneigh;
+-  LammpsNeighborList * llist;
++  deepmd::InputNlist * llist;
+ };
+ 
+ LList::~LList()
+@@ -184,7 +184,7 @@ LList::LList
+       for ( int j=0; j<numneigh[i]; ++j )
+ 	firstneigh[i][j] = nlist[i][j];
+     }
+-  llist = new LammpsNeighborList( nat, ilist, numneigh, firstneigh );
++  llist = new deepmd::InputNlist( nat, ilist, numneigh, firstneigh );
+ }
+ 
+ 
+@@ -378,8 +378,8 @@ private:
+   int ntb;
+   int nmodel;
+   std::vector<std::string> typemap;
+-  std::tr1::shared_ptr<NNPInter> nnp_inter;
+-  std::tr1::shared_ptr<NNPInterModelDevi> nnp_inter_devi;
++  std::tr1::shared_ptr<deepmd::DeepPot> nnp_inter;
++  std::tr1::shared_ptr<deepmd::DeepPotModelDevi> nnp_inter_devi;
+   std::vector<double> virial;
+   std::vector<double> box;
+ };
+@@ -428,20 +428,20 @@ mlevaluator::mlevaluator
+     {
+       //std::cout << "Model: " << model_filename[0] << std::endl;
+       
+-      nnp_inter.reset( new NNPInter(model_filename[0]) );
++      nnp_inter.reset( new deepmd::DeepPot(model_filename[0]) );
+       std::string orcstr;
+       nnp_inter->get_type_map(orcstr);
+       typemap = get_typemap( orcstr );
+     }
+   else if ( model_filename.size() > (std::size_t)1 )
+     {
+-      nnp_inter.reset( new NNPInter(model_filename[0]) );
++      nnp_inter.reset( new deepmd::DeepPot(model_filename[0]) );
+       std::string orcstr;
+       nnp_inter->get_type_map(orcstr);
+       typemap = get_typemap( orcstr );
+       nnp_inter.reset();
+       
+-      nnp_inter_devi.reset( new NNPInterModelDevi(model_filename) );
++      nnp_inter_devi.reset( new deepmd::DeepPotModelDevi(model_filename) );
+     }
+ 
+   box[0] = BOXL;
