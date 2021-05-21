@@ -1,17 +1,18 @@
 diff --git a/AmberTools/src/sander/ml.cpp b/AmberTools/src/sander/ml.cpp
-index 75ab58028b..cef361b225 100644
+index 75ab58028b..3de665605e 100644
 --- a/AmberTools/src/sander/ml.cpp
 +++ b/AmberTools/src/sander/ml.cpp
-@@ -8,7 +8,7 @@
+@@ -8,7 +8,8 @@
  #include <tr1/memory>
  #include <vector>
  #include <string>
 -#include <deepmd/NNPInter.h>
 +#include <deepmd/DeepPot.h>
++#include <deepmd/neighbor_list.h>
  #include "f90stream.hpp"
  
  #ifdef WITH_MPI
-@@ -126,7 +126,7 @@ public:
+@@ -126,7 +127,7 @@ public:
    int * ilist;
    int * numneigh;
    int * * firstneigh;
@@ -20,7 +21,7 @@ index 75ab58028b..cef361b225 100644
  };
  
  LList::~LList()
-@@ -184,7 +184,7 @@ LList::LList
+@@ -184,7 +185,7 @@ LList::LList
        for ( int j=0; j<numneigh[i]; ++j )
  	firstneigh[i][j] = nlist[i][j];
      }
@@ -29,7 +30,7 @@ index 75ab58028b..cef361b225 100644
  }
  
  
-@@ -378,8 +378,8 @@ private:
+@@ -378,8 +379,8 @@ private:
    int ntb;
    int nmodel;
    std::vector<std::string> typemap;
@@ -40,7 +41,7 @@ index 75ab58028b..cef361b225 100644
    std::vector<double> virial;
    std::vector<double> box;
  };
-@@ -428,20 +428,20 @@ mlevaluator::mlevaluator
+@@ -428,20 +429,20 @@ mlevaluator::mlevaluator
      {
        //std::cout << "Model: " << model_filename[0] << std::endl;
        
