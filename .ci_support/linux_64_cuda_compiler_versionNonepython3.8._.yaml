@@ -9,7 +9,7 @@ c_compiler_version:
 cdt_name:
 - cos6
 channel_sources:
-- deepmodeling,defaults
+- deepmodeling/label/dev,deepmodeling,defaults
 channel_targets:
 - ambertoolsml main
 cuda_compiler:
@@ -23,7 +23,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-comp7
 dp_version:
-- 1.3.3
+- 2.0.0.b0
 fftw:
 - '3'
 fortran_compiler:
@@ -61,7 +61,7 @@ pin_run_as_build:
 python:
 - 3.8.*
 readline:
-- '8.0'
+- '8'
 target_platform:
 - linux-64
 unit_tests:
