@@ -18,7 +18,7 @@ source:
     - dp2.patch
 
 build:
-  number: 2
+  number: 3
   string: "py{{ py }}_{{ PKG_BUILDNUM }}_cuda{{ cuda_compiler_version }}_{{ dp_variant }}"
   skip: True  # [win or py2k]
   skip: True  # [not linux]
